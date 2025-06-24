@@ -23,7 +23,7 @@
 
     <!-- Your Stylesheet -->
     <script type="module" crossorigin src="/cake-shop-project/index.js"></script>
-    <link rel="stylesheet" crossorigin href="/cake-shop-project/assets/index-BUFoF-fH.css">
+    <link rel="stylesheet" crossorigin href="/cake-shop-project/assets/index-DqsENZE2.css">
   </head>
   <body>
     <header class="header">
@@ -156,111 +156,184 @@
   </div>
 </section>
 
-      <!-- Section 2: The Order Form -->
-<section id="order-form-section" class="form-container">
-  <h2>Create Your Custom Cake</h2>
-  <p>
-    Fill out the details below and we'll get back to you shortly to confirm your
-    order!
-  </p>
-
-  <form action="#" method="POST">
-    <!-- Contact Information -->
-    <div class="form-group">
-      <label for="name">Your Full Name</label>
-      <input type="text" id="name" name="customer_name" required />
+      <!-- PASTE THIS ENTIRE SECTION INTO YOUR HTML FILE -->
+<section class="work-together" id="order-section">
+  <div class="container work-together-container">
+    <div class="header-container-work-together">
+      <h2 class="work-together-header">
+        Create Your
+        <span class="work-together-pink-header">Perfect Cake Order</span>
+      </h2>
     </div>
-
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <input type="email" id="email" name="customer_email" required />
-    </div>
-
-    <!-- Cake Details -->
-    <div class="form-group">
-      <label for="cake-size">Cake Size (servings)</label>
-      <select id="cake-size" name="cake_size">
-        <option value="6-inch">6-inch (serves 8-10)</option>
-        <option value="8-inch">8-inch (serves 14-18)</option>
-        <option value="10-inch">10-inch (serves 25-30)</option>
-        <option value="sheet-cake">Sheet Cake (serves 40+)</option>
-      </select>
-    </div>
-
-    <div class="form-group">
-      <label for="cake-flavor">Cake Flavor</label>
-      <select id="cake-flavor" name="cake_flavor">
-        <option value="vanilla-bean">Classic Vanilla Bean</option>
-        <option value="chocolate-fudge">Decadent Chocolate Fudge</option>
-        <option value="red-velvet">Red Velvet with Cream Cheese</option>
-        <option value="lemon-raspberry">Lemon & Raspberry Cream</option>
-        <option value="carrot-cake">Spiced Carrot Cake</option>
-      </select>
-    </div>
-
-    <!-- Frosting Choice -->
-    <fieldset class="form-group">
-      <legend>Frosting Type</legend>
-      <div class="radio-option">
-        <input
-          type="radio"
-          id="buttercream"
-          name="frosting"
-          value="buttercream"
-          checked
-        />
-        <label for="buttercream">Vanilla Buttercream</label>
+    <div class="section-wrapper">
+      <div class="desc-nav-container">
+        <p class="form-description">
+          Fill out the details below to order your delicious, handcrafted cake.
+        </p>
+        <!-- This contact info is still useful for direct inquiries -->
+        <ul class="form-contact-list">
+          <li class="form-item-list">
+            <svg class="icon-form" width="24" height="24">
+              <use href="/img/sprite.svg#icon-phone"></use>
+            </svg>
+            <a href="tel:+380904567890">+380 90 456 78 90</a>
+          </li>
+          <li class="form-item-list">
+            <svg class="icon-form" width="24" height="24">
+              <use href="/img/sprite.svg#icon-mail"></use>
+            </svg>
+            <a href="mailto:orders@cakeshop.com">orders@cakeshop.com</a>
+          </li>
+        </ul>
       </div>
-      <div class="radio-option">
-        <input
-          type="radio"
-          id="cream-cheese"
-          name="frosting"
-          value="cream-cheese"
-        />
-        <label for="cream-cheese">Cream Cheese Frosting</label>
+
+      <!-- === THE NEW CAKE ORDER FORM STARTS HERE === -->
+      <div class="form-container">
+        <form id="cake-order-form" novalidate>
+          <!-- Name and Surname -->
+          <div class="form-group">
+            <label for="full-name" class="form-label">Name and Surname*</label>
+            <input
+              type="text"
+              id="full-name"
+              name="full_name"
+              class="form-input"
+              placeholder="e.g., Jane Doe"
+              required
+            />
+          </div>
+
+          <!-- Delivery Option -->
+          <fieldset class="form-group">
+            <legend class="form-label">Delivery Option</legend>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="pickup"
+                  name="delivery_option"
+                  value="pickup"
+                  checked
+                />
+                <label for="pickup">Pickup</label>
+              </div>
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="delivery"
+                  name="delivery_option"
+                  value="delivery"
+                />
+                <label for="delivery">Delivery</label>
+              </div>
+            </div>
+            <p class="form-note">(Minimum 5 slices for delivery)</p>
+          </fieldset>
+
+          <!-- Delivery Address (Initially Hidden) -->
+          <div id="delivery-address-group" class="hidden">
+            <div class="form-group">
+              <label for="town" class="form-label">Town*</label>
+              <input
+                type="text"
+                id="town"
+                name="town"
+                class="form-input"
+                placeholder="Your Town/City"
+              />
+            </div>
+            <div class="form-group">
+              <label for="street" class="form-label">Street*</label>
+              <input
+                type="text"
+                id="street"
+                name="street"
+                class="form-input"
+                placeholder="Main Street, 123"
+              />
+            </div>
+          </div>
+
+          <!-- Contact Details -->
+          <div class="form-group">
+            <label for="contact-number" class="form-label"
+              >Contact Number*</label
+            >
+            <input
+              type="tel"
+              id="contact-number"
+              name="contact_number"
+              class="form-input"
+              placeholder="e.g., +380 90 123 45 67"
+              required
+              pattern="[\d\s\-\+\(\)]+"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="form-email" class="form-label">Email*</label>
+            <input
+              type="email"
+              class="form-input"
+              id="form-email"
+              name="form_email"
+              placeholder="your.email@example.com"
+              required
+            />
+          </div>
+
+          <!-- Cake Choice -->
+          <div class="form-group">
+            <label for="cake-kind" class="form-label">Choose Your Cake*</label>
+            <select id="cake-kind" name="cake_kind" class="form-input" required>
+              <option value="" disabled selected>
+                Select a cake flavor...
+              </option>
+              <option value="strawberry-delight">Strawberry Delight</option>
+              <option value="chocolate-fantasy">Chocolate Fantasy</option>
+              <option value="mango-dream">Mango Dream</option>
+            </select>
+          </div>
+
+          <!-- Size Option -->
+          <fieldset class="form-group">
+            <legend class="form-label">Size*</legend>
+            <div class="radio-group">
+              <div class="radio-option">
+                <input
+                  type="radio"
+                  id="size-slice"
+                  name="cake_size"
+                  value="slice"
+                  required
+                />
+                <label for="size-slice">Slice</label>
+              </div>
+              <div class="radio-option">
+                <input type="radio" id="size-kg" name="cake_size" value="1kg" />
+                <label for="size-kg">1 kg Cake</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <button class="button-form" type="submit">ORDER NOW</button>
+        </form>
       </div>
-      <div class="radio-option">
-        <input
-          type="radio"
-          id="chocolate-ganache"
-          name="frosting"
-          value="chocolate-ganache"
-        />
-        <label for="chocolate-ganache">Chocolate Ganache</label>
-      </div>
-    </fieldset>
-
-    <!-- Customization -->
-    <div class="form-group">
-      <label for="message">Message on Cake (optional)</label>
-      <input
-        type="text"
-        id="message"
-        name="cake_message"
-        placeholder="e.g., 'Happy Birthday, Anna!'"
-      />
     </div>
+  </div>
 
-    <div class="form-group">
-      <label for="instructions">Special Instructions or Design Ideas</label>
-      <textarea
-        id="instructions"
-        name="instructions"
-        rows="4"
-        placeholder="e.g., 'Pastel colors, with some flowers on top. No nuts, please.'"
-      ></textarea>
+  <!-- Success Modal (Updated Text) -->
+  <div id="success-modal" class="modal">
+    <div class="modal-content">
+      <button class="close-modal">×</button>
+      <h3 class="modal-header">Thank you for your order!</h3>
+      <p class="modal-text">
+        We've received your request and will contact you shortly via email or
+        phone to confirm the details and payment. We can't wait for you to enjoy
+        your cake!
+      </p>
     </div>
-
-    <!-- Date -->
-    <div class="form-group">
-      <label for="pickup-date">Preferred Pickup/Delivery Date</label>
-      <input type="date" id="pickup-date" name="pickup_date" required />
-    </div>
-
-    <!-- Submit Button -->
-    <button type="submit" class="submit-button">Place My Order</button>
-  </form>
+  </div>
 </section>
 
     </main>
