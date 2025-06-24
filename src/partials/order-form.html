@@ -1,0 +1,106 @@
+<!-- Section 2: The Order Form -->
+<section id="order-form-section" class="form-container">
+  <h2>Create Your Custom Cake</h2>
+  <p>
+    Fill out the details below and we'll get back to you shortly to confirm your
+    order!
+  </p>
+
+  <form action="#" method="POST">
+    <!-- Contact Information -->
+    <div class="form-group">
+      <label for="name">Your Full Name</label>
+      <input type="text" id="name" name="customer_name" required />
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email Address</label>
+      <input type="email" id="email" name="customer_email" required />
+    </div>
+
+    <!-- Cake Details -->
+    <div class="form-group">
+      <label for="cake-size">Cake Size (servings)</label>
+      <select id="cake-size" name="cake_size">
+        <option value="6-inch">6-inch (serves 8-10)</option>
+        <option value="8-inch">8-inch (serves 14-18)</option>
+        <option value="10-inch">10-inch (serves 25-30)</option>
+        <option value="sheet-cake">Sheet Cake (serves 40+)</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="cake-flavor">Cake Flavor</label>
+      <select id="cake-flavor" name="cake_flavor">
+        <option value="vanilla-bean">Classic Vanilla Bean</option>
+        <option value="chocolate-fudge">Decadent Chocolate Fudge</option>
+        <option value="red-velvet">Red Velvet with Cream Cheese</option>
+        <option value="lemon-raspberry">Lemon & Raspberry Cream</option>
+        <option value="carrot-cake">Spiced Carrot Cake</option>
+      </select>
+    </div>
+
+    <!-- Frosting Choice -->
+    <fieldset class="form-group">
+      <legend>Frosting Type</legend>
+      <div class="radio-option">
+        <input
+          type="radio"
+          id="buttercream"
+          name="frosting"
+          value="buttercream"
+          checked
+        />
+        <label for="buttercream">Vanilla Buttercream</label>
+      </div>
+      <div class="radio-option">
+        <input
+          type="radio"
+          id="cream-cheese"
+          name="frosting"
+          value="cream-cheese"
+        />
+        <label for="cream-cheese">Cream Cheese Frosting</label>
+      </div>
+      <div class="radio-option">
+        <input
+          type="radio"
+          id="chocolate-ganache"
+          name="frosting"
+          value="chocolate-ganache"
+        />
+        <label for="chocolate-ganache">Chocolate Ganache</label>
+      </div>
+    </fieldset>
+
+    <!-- Customization -->
+    <div class="form-group">
+      <label for="message">Message on Cake (optional)</label>
+      <input
+        type="text"
+        id="message"
+        name="cake_message"
+        placeholder="e.g., 'Happy Birthday, Anna!'"
+      />
+    </div>
+
+    <div class="form-group">
+      <label for="instructions">Special Instructions or Design Ideas</label>
+      <textarea
+        id="instructions"
+        name="instructions"
+        rows="4"
+        placeholder="e.g., 'Pastel colors, with some flowers on top. No nuts, please.'"
+      ></textarea>
+    </div>
+
+    <!-- Date -->
+    <div class="form-group">
+      <label for="pickup-date">Preferred Pickup/Delivery Date</label>
+      <input type="date" id="pickup-date" name="pickup_date" required />
+    </div>
+
+    <!-- Submit Button -->
+    <button type="submit" class="submit-button">Place My Order</button>
+  </form>
+</section>

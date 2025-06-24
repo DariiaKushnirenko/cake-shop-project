@@ -1,181 +1,176 @@
 :root {
-  /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
-    Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  font-size: 16px;
-  line-height: 1.5;
-  font-weight: 400;
+    /* font-family: Inter, Avenir, Helvetica, Arial, sans-serif; */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+        Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    font-weight: 400;
 
-  color: #242424;
-  background-color: rgba(255, 255, 255, 0.87);
+    color: #242424;
+    background-color: rgba(255, 255, 255, 0.87);
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+}
+
+
+html {
+    /* This makes the button's link scroll smoothly */
+    scroll-behavior: smooth;
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  min-width: 100vw;
-  min-height: 100vh;
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
 }
 
 main {
-  flex-grow: 1;
+    flex-grow: 1;
 }
+
 main:has(.back-link) {
-  text-align: center;
+    text-align: center;
 }
 
-form {
-  text-align: center;
+/* --- GLOBAL STYLES & VARIABLES --- */
+:root {
+    /* Fonts */
+    --font-primary: 'Poppins', sans-serif;
+    --font-headline: 'Fredoka', sans-serif;
+    --font-handwritten: 'Pacifico', cursive;
+    --font-badge: 'Baloo 2', cursive;
+
+    /* Colors */
+    --color-cherry-red: #d94f4f;
+    --color-deep-violet: #5c2d91;
+    --color-vibrant-pink: #ff4eb8;
+    --color-milky-pink: #fff6f0;
+    --color-creamy-pink: #fff0f5;
+    --color-peach: #fef0e6;
+    --color-card-bg: #fffaf7;
+    --color-white: #ffffff;
+    --color-dark-text: #333333;
 }
 
-input {
-  box-sizing: border-box;
-  padding: 8px 16px;
-  border-radius: 4px;
-  width: 272px;
-  height: 40px;
-  background: #fff;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #808080;
-  
-}
-input:hover,
-input:focus {
-  border-color: #000;
-}
-::placeholder {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #808080;
+html {
+    scroll-behavior: smooth;
 }
 
-button {
-  margin-left: 8px;
-  border-radius: 8px;
-  border: #4e75ff;
-  padding: 8px 16px;
-  width: 91px;
-  height: 40px;
-  background: #4e75ff;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.04em;
-  color: #fff;
+body {
+    margin: 0;
+    font-family: var(--font-primary);
+    background-color: var(--color-white);
+    color: var(--color-dark-text);
 }
 
-button:hover,
-button:focus {
-  color: #fff;
-  background-color: #6c8cff;
-  cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.2s ease;
-  transform: scale(1.02);
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.loader {
-  margin: 0 auto;
-  margin-top: 15px;
-  align-items: center;
-  display: none;
-  position: relative;
-  height: 12px;
-  width: 20%;
-  border: 1px solid #fff;
-  border-radius: 10px;
-  overflow: hidden;
+.section-title {
+    font-family: var(--font-headline);
+    text-align: center;
+    margin-bottom: 50px;
 }
 
-.loader::after {
-  content: '';
-  width: 100%;
-  height: 100%;
-  background: #7575db;;
-  position: absolute;
-  top: 0;
-  left: 0;
-  box-sizing: border-box;
-  animation: animloader 5s linear infinite;
+
+
+
+
+
+
+
+
+
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet View (Screens smaller than 992px) */
+@media (max-width: 992px) {
+
+    /* Hero Section */
+    .hero-text h1 {
+        font-size: 28px;
+    }
+
+    .cake-image {
+        width: 350px;
+        height: 350px;
+    }
+
+    /* Products Section */
+    .cake-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .product-image {
+        max-width: 220px;
+    }
+
+    /* Reviews Section */
+    .reviews-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+    }
 }
 
-@keyframes animloader {
-  0% {
-    left: 0;
-    transform: translateX(-100%);
-  }
+/* Mobile View (Screens smaller than 768px) */
+@media (max-width: 768px) {
 
-  100% {
-    left: 100%;
-    transform: translateX(0%);
-  }
-}
+    /* Header */
+    .main-nav {
+        display: none;
+    }
 
-.loader.is-visible {
-  display: block;
-}
+    /* Hide nav for mobile; requires JS for a hamburger menu */
+    .logo {
+        font-size: 20px;
+    }
 
-.gallery {
-  display: flex;
-  justify-content: center;
-  row-gap: 24px;
-  column-gap: 24px;
-  list-style: none;
-  flex-wrap: wrap;
-}
+    /* Hero Section */
+    .hero-content {
+        flex-direction: column;
+        text-align: center;
+    }
 
-.gallery li {
-  flex: 1 1 calc(33.333% - 24px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 1px solid #808080;
-  flex-direction: column;
-}
+    .hero-image-container {
+        order: 1;
+    }
 
-.info {
-  display: flex;
-  gap: 50px;
-  align-items: center;
-}
+    .hero-text {
+        order: 2;
+        margin-top: 30px;
+    }
 
-.info p {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+    .hero-text h1 {
+        font-size: 22px;
+    }
 
-.gallery img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  border: #000;
-}
+    .cake-image {
+        width: 250px;
+        height: 250px;
+    }
 
-.MoreBtn {
-  display: none;
-}
+    /* Products Section */
+    .cake-grid {
+        grid-template-columns: 1fr;
+    }
 
-.MoreBtn.is-visible {
-  display: block;
-  align-items: center;
-  margin-bottom: 44px;
-  margin-top: 32px;
-  border-radius: 8px;
-  padding: 8px 16px;
-  width: 125px;
-  height: 40px;
-  margin: 0 auto;
-}
+    .product-image {
+        max-width: 160px;
+    }
+
+    /* Footer */
+    .contact-list {
+        flex-direction: column;
+        gap: 20px;
+    } }

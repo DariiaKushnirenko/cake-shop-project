@@ -1,0 +1,63 @@
+/* --- 2. HERO SECTION --- */
+.hero-section {
+    background-color: var(--color-creamy-pink);
+    display: flex;
+    align-items: center;
+    padding: 60px 0;
+    min-height: calc(100vh - 80px);
+    /* Full height minus header */
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-text h1 {
+    font-family: var(--font-headline);
+    font-size: 36px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hero-text .subtext {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: var(--color-vibrant-pink);
+    color: var(--color-white);
+    font-family: var(--font-badge);
+    font-size: 18px;
+    padding: 10px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(255, 78, 184, 0.4);
+}
+
+.hero-image-container {
+    flex-shrink: 0;
+    /* Prevents image from shrinking */
+}
+
+.cake-image {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1); }
+

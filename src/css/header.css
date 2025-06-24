@@ -1,0 +1,51 @@
+/* --- 1. HEADER SECTION --- */
+.header {
+    background-color: var(--color-milky-pink);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logo {
+    font-family: var(--font-primary);
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--color-cherry-red);
+    text-decoration: none;
+}
+
+.logo-handwritten {
+    font-family: var(--font-handwritten);
+    font-weight: 400;
+    margin: 0 5px;
+}
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 35px;
+}
+
+.main-nav a {
+    font-size: 16px;
+    color: var(--color-deep-violet);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--color-cherry-red); }

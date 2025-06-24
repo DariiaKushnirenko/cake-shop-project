@@ -1,0 +1,49 @@
+/* --- 4. USER REVIEWS SECTION --- */
+.reviews-section {
+    padding: 80px 0;
+    background-color: var(--color-peach);
+}
+
+.reviews-section .review-title {
+    font-size: 28px;
+    color: var(--color-deep-violet);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.review-card {
+    background: var(--color-white);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.review-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+    border: 2px solid var(--color-creamy-pink);
+}
+
+.review-card h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.review-text {
+    font-size: 16px;
+    color: var(--color-dark-text);
+    line-height: 1.7;
+    margin: 0; }
